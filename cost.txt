@@ -1,0 +1,6 @@
+> /cost
+  ⎿  Total cost:            $0.4477
+     Total duration (API):  20m 56.0s
+     Total duration (wall): 1h 16m 15.5s
+     Total code changes:    511 lines added, 51 lines removed
+     Tokens:                135.0k base input, 0 cache write, 0 cache read, 27.8k base output

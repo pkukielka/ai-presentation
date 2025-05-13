@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level Up Your AI Collaboration: From Prompting to Orchestration</title>
+  <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/white.css">
+  <link rel="stylesheet" href="node_modules/highlight.js/styles/atom-one-dark.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="conversation-styles.css">
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- 1. Title Slide -->
+      <section class="title-slide">
+        <div class="title-content">
+          <h1>Level Up Your AI Collaboration</h1>
+          <p class="subtitle">From Prompting to Orchestration</p>
+          <p class="presenter">Piotr Kukielka, Principal Engineer @ Sourcegraph</p>
+          <div class="decoration">
+            <div class="ai-icon">🤖</div>
+            <div class="ai-icon">💻</div>
+            <div class="ai-icon">✨</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Introduction/Overview -->
+      <section>
+        <h2>What We'll Cover Today</h2>
+        <ul>
+          <li>The evolution of AI in development</li>
+          <li>What AI can do for developers</li>
+          <li>How to choose best tool for the job</li>
+          <li>Practical demonstration</li>
+          <li>Tools and techniques for effective collaboration</li>
+          <li>The future developer's role</li>
+        </ul>
+        <div class="note meta-slide">
+          <p>This entire presentation—including all slides and examples—was created in collaboration with Claude</p>
+        </div>
+      </section>
+
+      <!-- 3. Evolution of AI in Development -->
+      <section>
+        <h2>Evolution of AI in Development</h2>
+        <div class="timeline">
+          <div class="timeline-phase">
+            <div class="phase-icon">🦆</div>
+            <h3>Digital Rubber Duck (2020-2021)</h3>
+            <p>Q&A and basic explanations</p>
+          </div>
+          <div class="timeline-phase">
+            <div class="phase-icon">👯</div>
+            <h3>Pair Programming (2022-2023)</h3>
+            <p>Code completions and suggestions</p>
+          </div>
+          <div class="timeline-phase">
+            <div class="phase-icon">🎭</div>
+            <h3>Task Orchestration (2024+)</h3>
+            <p>Multi-step reasoning and execution</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 1: Digital Rubber Duck -->
+      <section>
+        <h2>Phase 1: Digital Rubber Duck</h2>
+        <div class="two-column">
+          <div>
+            <h3>Capabilities</h3>
+            <ul>
+              <li>Answering programming questions</li>
+              <li>Explaining code snippets</li>
+              <li>Basic documentation lookup</li>
+              <li>Simple code generation</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Limitations</h3>
+            <ul>
+              <li>Limited context awareness</li>
+              <li>Frequent hallucinations</li>
+              <li>No project understanding</li>
+              <li>Copy-paste workflow</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 2: Pair Programming -->
+      <section>
+        <h2>Phase 2: Pair Programming</h2>
+        <div class="two-column">
+          <div>
+            <h3>Capabilities</h3>
+            <ul>
+              <li>Integrated code completions</li>
+              <li>Contextual suggestions</li>
+              <li>Function generation</li>
+              <li>Real-time assistance</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Examples</h3>
+            <ul>
+              <li>Cursor</li>
+              <li>GitHub Copilot</li>
+              <li>Cody by Sourcegraph</li>
+              <li>JetBrains AI Assistant</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 3: Task Orchestration -->
+      <section>
+        <h2>Phase 3: Task Orchestration</h2>
+        <div class="two-column">
+          <div>
+            <h3>Capabilities</h3>
+            <ul>
+              <li>Multi-step task execution</li>
+              <li>Tool usage and chaining</li>
+              <li>Codebase-aware operations</li>
+              <li>System design assistance</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Examples</h3>
+            <ul>
+              <li>Aider</li>
+              <li>Claude Code</li>
+              <li>Devin</li>
+              <li>Amp by Sourcegraph</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+      <section>
+        <div class="featured-slide">
+          <h1>What AI Can Do For You</h1>
+          <p>And Where It Falls Short</p>
+        </div>
+      </section>
+
+
+      <!-- Paired: Code Quality & Maintainability vs. Unit Testing Limitations -->
+      <section>
+        <h2>Code Quality & Testing</h2>
+        <div class="two-column">
+          <div>
+            <h3>AI Assistance for Code Quality</h3>
+            <ul>
+              <li>Adding more tests - both for existing and new code</li>
+              <li>Adding Documentation & Comments</li>
+              <li>Suggesting Refactoring & Improvements</li>
+              <li>Identifying Potential Bugs & Edge Cases</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Unit Testing Limitations</h3>
+            <ul>
+              <li>Often misses critical corner/edge cases</li>
+              <li>Agentic AI can "fix" tests to pass (instead of fixing code)</li>
+              <li>Generates overly specific or brittle tests</li>
+              <li>Tests might rely on AI's own incorrect code assumptions</li>
+              <li>Requires human expertise to validate test coverage</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Paired: Debugging & Error Analysis vs. Lack of debugging automation, missing tooling -->
+      <section>
+        <h2>Debugging & Error Analysis</h2>
+        <div class="two-column">
+          <div>
+            <h3>AI Assistance for Debugging</h3>
+            <ul>
+              <li>Explaining Cryptic Error Messages</li>
+              <li>Suggesting Debugging Steps</li>
+              <li>Understanding Unfamiliar Code/Traces</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Limitations in AI Debugging</h3>
+            <ul>
+              <li>Cannot perform live debugging (breakpoints, runtime state)</li>
+              <li>Relies on user-provided, potentially incomplete context</li>
+              <li>Suggestions can be generic or mislead</li>
+              <li>Struggles with environment/runtime-specific issues</li>
+              <li>Limited integrated debugging tools beyond chat</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Paired: Workflow Automation vs. Code Correctness & Hallucinations -->
+      <section>
+        <h2>Code Generation & Workflow Automation</h2>
+        <div class="two-column">
+          <div>
+            <h3>Boosting Your Workflow Efficiency</h3>
+            <ul>
+              <li>Generating Boilerplate Code</li>
+              <li>Creating Complex Shell Commands/Scripts</li>
+              <li>Providing API Usage Examples</li>
+              <li>Assisting with Configuration Files</li>
+              <li>Doing code reviews</li>
+              <li>Leading semi-automatic migrations and rewrites</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Code Correctness & Hallucination Risks</h3>
+            <ul>
+              <li>Generates plausible-but-wrong code</li>
+              <li>Hallucinates APIs or library behavior</li>
+              <li>Introduces subtle logic errors</li>
+              <li>Errors often hide in edge cases</li>
+              <li>Requires rigorous verification & debugging</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Paired: Understanding & Exploration vs. Context Management & Attention Dilution -->
+      <section>
+        <h2>Understanding & Exploration</h2>
+        <div class="two-column">
+          <div>
+            <h3>AI for Learning & Exploration</h3>
+            <ul>
+              <li>Summarizing code functionality</li>
+              <li>Making bigger projects easier to understand</li>
+              <li>Getting started with new projects or technologies</li>
+              <li>Exploring alternative implementations</li>
+              <li>Real-time learning during implementation</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Context & Attention Challenges</h3>
+            <ul>
+              <li>Limited effective context window</li>
+              <li>Attention dilution with long context (important info gets lost)</li>
+              <li>Agentic context fetching helps, but still complex</li>
+              <li>Difficulty managing state & history across turns</li>
+              <li>Requires manual intervention or careful prompting</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Paired: Communication & Collaboration vs. Lack of "Why" and Reasoning -->
+      <section>
+        <h2>Communication & Explanation</h2>
+        <div class="two-column">
+          <div>
+            <h3>AI Assistance for Communication</h3>
+            <ul>
+              <li>Drafting commit messages</li>
+              <li>Drafting PRs summaries</li>
+              <li>Explain technical concepts</li>
+              <li>Assist with code review feedback (drafting)</li>
+              <li>Help with organisation and summarisation of knowledge</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Lack of "Why" & Deep Reasoning</h3>
+            <ul>
+              <li>Often provides code without explaining underlying logic</li>
+              <li>Struggles to justify design choices or alternatives</li>
+              <li>Less effective for learning *how* to think about problems</li>
+              <li>Can generate working but architecturally poor code</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Paired: Cognition Enhancement vs. Over-Reliance & Skill Degradation -->
+      <section>
+        <h2>Cognition Enhancement vs. Over-Reliance</h2>
+        <div class="two-column">
+          <div>
+            <h3>Augmenting Your Cognitive Flow</h3>
+            <ul>
+              <li>Amplifying your existing knowledge</li>
+              <li>Exploring unfamiliar technologies</li>
+              <li>Focusing on higher-level concerns</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Risks of Over-Reliance & Skill Degradation</h3>
+            <ul>
+              <li>Can hinder deep understanding of fundamentals</li>
+              <li>Risk of blindly accepting incorrect suggestions</li>
+              <li>Reduced ability to debug complex issues independently</li>
+              <li>Becoming an "AI operator" vs. a problem solver</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Paired: Security Audit (new benefit) vs. Security Vulnerabilities -->
+      <section>
+        <h2>Security Assistance & Risks</h2>
+        <div class="two-column">
+          <div>
+            <h3>AI Assistance for Security</h3>
+            <ul>
+              <li>Identify potential common vulnerabilities (initial pass)</li>
+              <li>Explain security risks of code patterns</li>
+              <li>Suggest secure coding practices/alternatives</li>
+              <li>Help understand security concepts</li>
+            </ul>
+          </div>
+          <div>
+            <h3>AI-Introduced Security Risks</h3>
+            <ul>
+              <li>Can generate code with common flaws (injection, XSS, etc.)</li>
+              <li>Risk of exposing proprietary code via cloud APIs</li>
+              <li>Training data leakage concerns (depending on vendor policy)</li>
+              <li>Requires dedicated human security review, not just AI check</li>
+            </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="featured-slide">
+        <h1>Best Tools To Use</h1>
+        <p>Obviously opinionated</p>
+      </div>
+    </section>
+
+    <section>
+      <div style="position: relative;">
+        <h2>Biggest problems to overcome</h2>
+        <div class="two-column">
+          <div>
+            <h3>Tooling issues</h3>
+            <ul>
+              <li>Limited context and context dilution</li>
+              <li>Context selection method</li>
+              <li>No Feedback loops from external tools</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Model issues</h3>
+            <ul>
+              <li>Cost</li>
+              <li>Accuracy & Reliability</li>
+              <li>Speed</li>
+              <li>No established standards for data sharing and processing (MCP starts to get traction but it is not perfect)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="agentic-annotation">Better with agentic apps!</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Choce depends on the use case</h2>
+      <div class="two-column">
+        <div>
+          <h3>Claude Code / Aider / Amp</h3>
+          <ul>
+            <li>Deep workspace analysis and understanding</li>
+            <li>Multi-files refactorings</li>
+            <li>Environments where VSC is bad chice for editor</li>
+            <li>Big or poorly understood projects</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Cursor / GitHub Copilot / Cody / Web Chats</h3>
+          <ul>
+            <li>Simple edits of narrowly specified parts of the code</li>
+            <li>Smaller refactorings</li>
+            <li>Changes where you want to have more fine-grained control</li>
+            <li>Questions about specific parts of the code</li>
+            <li>Learing about language features
+            <li>Discussions unrelated to the repository</li>
+
+          </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="featured-slide">
+      <h1>Show Time</h1>
+      <p>Cody & Clause Code</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="featured-slide">
+      <h1>Tips & Tricks</h1>
+    </div>
+  </section>
+
+  <section>
+    <h2>Work Planning and Verification</h2>
+    <ul>
+      <li>Ask AI to summarise its understanding of the problem</li>
+      <li>Ask additional questions for clarification</li>
+      <li>Ask AI to suggest potential solutions, with their benefits and drawbacks</li>
+      <li>Make sure answers describe both 'why' and 'how'</li>
+      <li>Choose best solution and ask AI to outline the implementation</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Task Decomposition</h2>
+    <ul>
+      <li>Break complex problems into AI-solvable units</li>
+      <li>Create clear specifications for each component</li>
+      <li>Manage dependencies between tasks</li>
+      <li>Maintain the big picture</li>
+    </ul>
+  </section>
+
+
+  <section>
+    <h2>Implementation verification</h2>
+    <ul>
+      <li>DO NOT accept solution you do not understand</li>
+      <li>Ask AI to write tests for the implementation</li>
+      <li>Carefully verify that they cover all corner cases</li>
+      <li>Make sure some integration tests are included - AI tends to focus on easier unittests</li> 
+      <li>Spend saved time on more end-to-end testing</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Practical tips</h2>
+    <ul>
+      <li>Try to use AI very early in the process even if you feel it won't be able to handle it</li>
+      <li>Use AI for tasks which are hard to figure out or implement, but easy to verify, not vice versa</li>
+      <li>Use 'git add .' to save milestones during more complex AI edits</li>
+      <li>Use scratch pads or dedicated branches for experimentation</li>
+      <li>Use context accumulated during AI session to generate great commit messages, PR descriptions and QA testing scripts</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="featured-slide">
+      <h1>The Future</h1>
+      <p>Is Now Old Man 🚀</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>What Can I Do? 🙆‍♀️</h2>
+    <ul>
+      <li>Drop "AI are stochastic parrots" attitude :) If AI makes you more productive, use it (others will)</li>
+      <li>Try new solutions periodically. Despite all the hype landscape is really changing fast, and your experience from year ago is already out of date</li>
+      <li>Easy tasks are going to be automated very soon (if not already). Producivity measures are changing. Last one out shuts off the lights.
+    </ul>
+  </section>
+
+  <!-- Career Development Strategy -->
+  <section>
+    <h2>Career Development Strategy</h2>
+    <div class="two-column">
+      <div>
+        <h3>Avoid Focusing On</h3>
+        <ul>
+          <li>Syntax memorization</li>
+          <li>Basic implementations</li>
+          <li>Repetitive tasks</li>
+          <li>Simple debugging</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Invest In</h3>
+            <ul>
+              <li>Systems and architecture design skills</li>
+              <li>Communication skills</li>
+              <li>Domain expertise and business understanding</li>
+              <li>Product thinking, understanding of the big picture</li>
+              <li>AI collaboration techniques</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Future Trends -->
+      <section>
+        <h2>Trends</h2>
+        <div class="trends">
+          <div class="trend">
+            <div class="trend-icon">👓</div>
+            <h3>Multi-modal Development</h3>
+            <p>Visual + voice + text interfaces</p>
+          </div>
+          <div class="trend">
+            <div class="trend-icon">🧩</div>
+            <h3>AI Specialization</h3>
+            <p>Domain-specific coding assistants</p>
+          </div>
+          <div class="trend">
+            <div class="trend-icon">🔄</div>
+            <h3>Self-improving Systems</h3>
+            <p>Developer agents that learn from feedback</p>
+          </div>
+          <div class="trend">
+            <div class="trend-icon">👑</div>
+            <h3>Local Models</h3>
+            <p>Local models are closer and closer to SOTA models</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Questions Slide -->
+      <section class="final-slide">
+        <div class="thank-you-container">
+          <h2>Questions?</h2>
+          <p class="thank-you">Thank you for attending!</p>
+          <div class="final-decoration">
+            <div class="emoji-circle">🙏</div>
+            <div class="emoji-circle">💻</div>
+            <div class="emoji-circle">🤖</div>
+          </div>
+          <p class="credits">Piotr Kukielka, Principal Engineer @ Sourcegraph</p>
+          <p class="date">Created with <span class="highlight">Claude</span> by Anthropic</p>
+        </div>
+      </section>
+      
+    </div>
+  </div>
+
+  <script src="node_modules/reveal.js/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      transition: 'fade',
+      transitionSpeed: 'fast',
+      backgroundTransition: 'zoom',
+      center: false,
+      disableLayout: false,
+      overview: true,
+      progress: true,
+      controls: true,
+      controlsTutorial: true,
+      history: true,
+      keyboard: true,
+      touch: true,
+      autoAnimateDuration: 0.5,
+      autoAnimateEasing: 'ease-out',
+      width: '100%',
+      height: '100%',
+      margin: 0.1,
+      minScale: 0.8,
+      maxScale: 1.0,
+      scale: 0.8,
+      plugins: []
+    });
+  </script>
+  <script src="node_modules/highlight.js/lib/common.js"></script>
+  <script>
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
+    });
+  </script>
+</body>
+</html>

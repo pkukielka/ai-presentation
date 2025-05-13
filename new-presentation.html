@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level Up Your AI Collaboration: From Prompting to Orchestration</title>
+  <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/white.css">
+  <link rel="stylesheet" href="node_modules/highlight.js/styles/atom-one-dark.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- 1. Title Slide -->
+      <section class="title-slide">
+        <div class="title-content">
+          <h1>Level Up Your AI Collaboration</h1>
+          <p class="subtitle">From Prompting to Orchestration</p>
+          <p class="presenter">Piotr Kukielka, Principal Engineer @ Sourcegraph</p>
+          <div class="decoration">
+            <div class="ai-icon">🤖</div>
+            <div class="ai-icon">💻</div>
+            <div class="ai-icon">✨</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Introduction/Overview -->
+      <section>
+        <h2>What We'll Cover Today</h2>
+        <ul>
+          <li>The evolution of AI in development</li>
+          <li>From asking questions to orchestrating tasks</li>
+          <li>Tools and techniques for effective collaboration</li>
+          <li>The future developer's role</li>
+          <li>Practical examples and demonstrations</li>
+        </ul>
+        <div class="note meta-slide">
+          <p>This entire presentation—including all slides and examples—was created in collaboration with Claude</p>
+        </div>
+      </section>
+
+      <!-- 3. Evolution of AI in Development -->
+      <section>
+        <h2>Evolution of AI in Development</h2>
+        <div class="timeline">
+          <div class="timeline-phase">
+            <div class="phase-icon">🦆</div>
+            <h3>Digital Rubber Duck (2018-2021)</h3>
+            <p>Q&A and basic explanations</p>
+          </div>
+          <div class="timeline-phase">
+            <div class="phase-icon">👯</div>
+            <h3>Pair Programming (2021-2023)</h3>
+            <p>Code completions and suggestions</p>
+          </div>
+          <div class="timeline-phase">
+            <div class="phase-icon">🎭</div>
+            <h3>Task Orchestration (2023+)</h3>
+            <p>Multi-step reasoning and execution</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 1: Digital Rubber Duck -->
+      <section>
+        <h2>Phase 1: Digital Rubber Duck</h2>
+        <div class="two-column">
+          <div>
+            <h3>Capabilities</h3>
+            <ul>
+              <li>Answering programming questions</li>
+              <li>Explaining code snippets</li>
+              <li>Basic documentation lookup</li>
+              <li>Simple code generation</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Limitations</h3>
+            <ul>
+              <li>Limited context awareness</li>
+              <li>Frequent hallucinations</li>
+              <li>No project understanding</li>
+              <li>Copy-paste workflow</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 2: Pair Programming -->
+      <section>
+        <h2>Phase 2: Pair Programming</h2>
+        <div class="two-column">
+          <div>
+            <h3>Capabilities</h3>
+            <ul>
+              <li>Integrated code completions</li>
+              <li>Contextual suggestions</li>
+              <li>Function generation</li>
+              <li>Real-time assistance</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Examples</h3>
+            <ul>
+              <li>GitHub Copilot</li>
+              <li>JetBrains AI Assistant</li>
+              <li>Cody by Sourcegraph</li>
+              <li>Amazon CodeWhisperer</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 3: Task Orchestration -->
+      <section>
+        <h2>Phase 3: Task Orchestration</h2>
+        <div class="two-column">
+          <div>
+            <h3>Capabilities</h3>
+            <ul>
+              <li>Multi-step task execution</li>
+              <li>Tool usage and chaining</li>
+              <li>Codebase-aware operations</li>
+              <li>System design assistance</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Examples</h3>
+            <ul>
+              <li>Claude Code</li>
+              <li>GitHub Copilot X</li>
+              <li>Devin</li>
+              <li>Custom AI agent frameworks</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Current AI Landscape -->
+      <section>
+        <h2>Current AI Landscape</h2>
+        <div class="card-container">
+          <div class="tool-card">
+            <div class="tool-icon">🚀</div>
+            <h3>GitHub Copilot</h3>
+            <p>IDE-integrated pair programmer</p>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🧠</div>
+            <h3>JetBrains AI</h3>
+            <p>Integrated IDE assistant</p>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔎</div>
+            <h3>Cody</h3>
+            <p>Codebase-aware assistant</p>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">💬</div>
+            <h3>Claude Code</h3>
+            <p>CLI development assistant</p>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">⚡</div>
+            <h3>Tabnine</h3>
+            <p>ML-powered completion</p>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🌐</div>
+            <h3>ChatGPT</h3>
+            <p>Web-based assistant</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Integration Types -->
+      <section>
+        <h2>Integration Types</h2>
+        <div class="integration-types">
+          <div class="integration-card">
+            <h3>IDE Plugins</h3>
+            <p>Seamless workflow, contextual awareness</p>
+            <p class="example">Copilot, Cody, JetBrains AI</p>
+          </div>
+          <div class="integration-card">
+            <h3>CLI Tools</h3>
+            <p>Power, flexibility, scriptability</p>
+            <p class="example">Claude Code, Cursor CLI</p>
+          </div>
+          <div class="integration-card">
+            <h3>Web Interfaces</h3>
+            <p>Rich UI, exploration-friendly</p>
+            <p class="example">ChatGPT, Claude, Replit</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Common Patterns of AI Usage -->
+      <section>
+        <h2>Common Patterns of AI Usage</h2>
+        <div class="usage-patterns">
+          <div class="pattern">
+            <h3>The Questioner</h3>
+            <p>"Explain this code..."</p>
+            <p>"How does X work?"</p>
+          </div>
+          <div class="pattern">
+            <h3>The Generator</h3>
+            <p>"Create a function that..."</p>
+            <p>"Write tests for this class"</p>
+          </div>
+          <div class="pattern">
+            <h3>The Debugger</h3>
+            <p>"Why am I getting this error?"</p>
+            <p>"How can I optimize this?"</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- More Patterns -->
+      <section>
+        <h2>More Usage Patterns</h2>
+        <div class="usage-patterns">
+          <div class="pattern">
+            <h3>The Refactorer</h3>
+            <p>"Make this code more readable"</p>
+            <p>"Convert to modern syntax"</p>
+          </div>
+          <div class="pattern">
+            <h3>The Architect</h3>
+            <p>"Design a system for..."</p>
+            <p>"What's the best approach?"</p>
+          </div>
+          <div class="pattern">
+            <h3>The Orchestrator (New)</h3>
+            <p>"Implement this feature end-to-end"</p>
+            <p>"Refactor across multiple files"</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Beyond Simple Prompting -->
+      <section>
+        <h2>Beyond Simple Prompting</h2>
+        <div class="two-column">
+          <div>
+            <h3>One-off Prompts</h3>
+            <ul>
+              <li>Limited context</li>
+              <li>No history or memory</li>
+              <li>Superficial understanding</li>
+              <li>Repetitive setup</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Conversational Interaction</h3>
+            <ul>
+              <li>Building shared context</li>
+              <li>Iterative refinement</li>
+              <li>Deeper understanding</li>
+              <li>More efficient workflow</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Teaching AI About Your Codebase -->
+      <section>
+        <h2>Teaching AI About Your Codebase</h2>
+        <ul>
+          <li>File structure and organization</li>
+          <li>Domain-specific terminology</li>
+          <li>Architectural patterns and conventions</li>
+          <li>Project-specific constraints</li>
+          <li>Development workflows and processes</li>
+        </ul>
+      </section>
+
+      <!-- Effective Context Provision -->
+      <section>
+        <h2>Effective Context Provision</h2>
+        <div class="code-example">
+          <h3>Poor Context</h3>
+          <pre><code class="language-text">
+"Fix this code:
+function getData() {
+  return fetch('/api').then(res => res);
+}"
+          </code></pre>
+          <h3>Better Context</h3>
+          <pre><code class="language-text">
+"Fix this API handling code to properly parse JSON 
+and handle errors. We use this pattern elsewhere 
+in our React app to process API responses:"
+          </code></pre>
+        </div>
+      </section>
+
+      <!-- 7. AI as a Cognitive Enhancer -->
+      <section>
+        <h2>AI as a Cognitive Enhancer</h2>
+        <ul>
+          <li>Amplifying your existing knowledge</li>
+          <li>Exploring unfamiliar technologies</li>
+          <li>Real-time learning during implementation</li>
+          <li>Delegating mechanical thinking</li>
+          <li>Focusing on higher-level concerns</li>
+        </ul>
+      </section>
+
+      <!-- Learning Acceleration -->
+      <section>
+        <h2>Learning Acceleration</h2>
+        <div class="two-column">
+          <div>
+            <h3>Traditional Learning</h3>
+            <ul>
+              <li>Documentation diving</li>
+              <li>Trial and error</li>
+              <li>Searching for examples</li>
+              <li>Following rigid tutorials</li>
+            </ul>
+          </div>
+          <div>
+            <h3>AI-Enhanced Learning</h3>
+            <ul>
+              <li>Interactive explanations</li>
+              <li>Custom examples for your use case</li>
+              <li>Path smoothing through complexity</li>
+              <li>Learning in your workflow</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. From Collaboration to Orchestration -->
+      <section>
+        <h2>From Collaboration to Orchestration</h2>
+        <div class="orchestration-levels">
+          <div class="level">
+            <h3>Level 1: Single Tasks</h3>
+            <p>"Generate a function"</p>
+          </div>
+          <div class="level">
+            <h3>Level 2: Task Sequences</h3>
+            <p>"Design, implement, and test a component"</p>
+          </div>
+          <div class="level">
+            <h3>Level 3: Full Workflows</h3>
+            <p>"Implement this feature from spec to PR"</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Task Decomposition -->
+      <section>
+        <h2>Task Decomposition</h2>
+        <ul>
+          <li>Breaking complex problems into AI-solvable units</li>
+          <li>Creating clear specifications for each component</li>
+          <li>Managing dependencies between tasks</li>
+          <li>Parallelizing independent work</li>
+          <li>Maintaining the big picture</li>
+        </ul>
+      </section>
+
+      <!-- Human-in-the-loop Workflows -->
+      <section>
+        <h2>Human-in-the-loop Workflows</h2>
+        <div class="workflow-diagram">
+          <div class="workflow-step">
+            <div class="step-number">1</div>
+            <p>Specification</p>
+            <div class="step-owner">Human</div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">2</div>
+            <p>Implementation</p>
+            <div class="step-owner">AI</div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">3</div>
+            <p>Validation</p>
+            <div class="step-owner">Human</div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">4</div>
+            <p>Refinement</p>
+            <div class="step-owner">AI</div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">5</div>
+            <p>Integration</p>
+            <div class="step-owner">Human + AI</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Practical Demonstration -->
+      <section>
+        <h2>Practical Demonstration</h2>
+        <h3>Fixing Configuration Settings in JetBrains Plugin</h3>
+        <div class="meta-slide">
+          <p>Real conversation with Claude for implementing a migration:</p>
+          <ul>
+            <li>Analyze existing codebase and problem</li>
+            <li>Design solution for fixing configuration issues</li>
+            <li>Implement the migration class</li>
+            <li>Test and refine implementation</li>
+            <li>Generate a proper PR description</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Conversation Example -->
+      <section>
+        <h2>Conversation Example</h2>
+        <div class="conversation-preview">
+          <div class="message user">
+            <p>That is correct! This fix is almost done, but some harm was already done and incorrect configurations were written on the client machines. I want to clean them up when new version of our plugin will be run for the first time.</p>
+          </div>
+          <div class="message assistant">
+            <p>I'll add a migration to clean up incorrect configurations from the cody_settings.json file. Let me first check the existing migration code and the affected settings file.</p>
+            <p>After reviewing the code and settings, I'll create a new migration class to clean up these settings.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Real PR Outcome -->
+      <section>
+        <h2>Real PR Outcome</h2>
+        <div class="code-example">
+          <h3>PR #7904 on sourcegraph/cody</h3>
+          <pre><code class="language-kotlin">
+class ClientConfigCleanupMigration : Migration {
+    override fun run(project: Project): Boolean {
+        val configService = CodyConfigService.getInstance(project)
+        val config = configService.config
+        
+        // Remove temporary client-side values
+        var modified = removeIfExists(config, "cody.advanced.agent")
+        modified = removeIfExists(config, "cody.advanced.hasNativeWebview") || modified
+        
+        // Remove default values to clean up config file
+        modified = cleanupDefaultValues(config) || modified
+        
+        if (modified) {
+            configService.saveConfig()
+        }
+        
+        return modified
+    }
+}
+          </code></pre>
+        </div>
+      </section>
+
+      <!-- 10. Tools & Techniques -->
+      <section>
+        <h2>Tools & Techniques for Effective Collaboration</h2>
+        <div class="two-column">
+          <div>
+            <h3>Prompt Engineering</h3>
+            <ul>
+              <li>Clear, specific instructions</li>
+              <li>Providing examples (few-shot)</li>
+              <li>Using structured formats</li>
+              <li>Context management</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Integration Setup</h3>
+            <ul>
+              <li>IDE integrations</li>
+              <li>CLI tools in workflow</li>
+              <li>Version control integration</li>
+              <li>Automation scripts</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Prompt Template Library -->
+      <section>
+        <h2>Prompt Template Library</h2>
+        <div class="templates">
+          <div class="template">
+            <h3>Implementation Template</h3>
+            <p>"Implement [component] that [functionality].<br>
+            Tech stack: [frameworks]<br>
+            Requirements: [list]<br>
+            Constraints: [limitations]"</p>
+          </div>
+          <div class="template">
+            <h3>Code Review Template</h3>
+            <p>"Review this code for:<br>
+            - Performance issues<br>
+            - Security vulnerabilities<br>
+            - Readability concerns<br>
+            - Best practices"</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. The Future Developer's Role -->
+      <section>
+        <h2>The Future Developer's Role</h2>
+        <div class="role-evolution">
+          <div class="role-stage">
+            <h3>Past</h3>
+            <p>Implementation-focused</p>
+            <div class="role-icon">⌨️</div>
+          </div>
+          <div class="role-stage">
+            <h3>Present</h3>
+            <p>AI collaboration</p>
+            <div class="role-icon">🤝</div>
+          </div>
+          <div class="role-stage">
+            <h3>Future</h3>
+            <p>AI orchestration</p>
+            <div class="role-icon">🎮</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Essential Human Skills -->
+      <section>
+        <h2>Essential Human Skills</h2>
+        <ul>
+          <li>Systems thinking and architecture</li>
+          <li>Critical evaluation of AI output</li>
+          <li>Domain expertise and business understanding</li>
+          <li>Creative problem definition</li>
+          <li>Ethical judgment and decision-making</li>
+        </ul>
+      </section>
+
+      <!-- Career Development Strategy -->
+      <section>
+        <h2>Career Development Strategy</h2>
+        <div class="two-column">
+          <div>
+            <h3>Avoid Focusing On</h3>
+            <ul>
+              <li>Syntax memorization</li>
+              <li>Basic implementations</li>
+              <li>Repetitive tasks</li>
+              <li>Simple debugging</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Invest In</h3>
+            <ul>
+              <li>System design skills</li>
+              <li>AI collaboration techniques</li>
+              <li>Workflow orchestration</li>
+              <li>Domain expertise</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. Key Takeaways -->
+      <section>
+        <h2>Key Takeaways</h2>
+        <ul>
+          <li>AI is evolving from assistant to collaborator to orchestrated tool</li>
+          <li>Develop skills to effectively decompose and delegate tasks</li>
+          <li>Create systematic approaches to validation and integration</li>
+          <li>Invest in orchestration and direction skills</li>
+          <li>Learn the tools that enable these workflows</li>
+        </ul>
+      </section>
+
+      <!-- Progressive Learning Path -->
+      <section>
+        <h2>Progressive Learning Path</h2>
+        <div class="learning-path">
+          <div class="path-step">
+            <h3>Beginner</h3>
+            <p>Single-task prompting</p>
+            <p>Try: GitHub Copilot, ChatGPT</p>
+          </div>
+          <div class="path-step">
+            <h3>Intermediate</h3>
+            <p>Multi-turn conversations</p>
+            <p>Try: Cody Chat, Claude</p>
+          </div>
+          <div class="path-step">
+            <h3>Advanced</h3>
+            <p>Workflow orchestration</p>
+            <p>Try: Claude Code, custom agents</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Future Trends -->
+      <section>
+        <h2>Future Trends</h2>
+        <div class="trends">
+          <div class="trend">
+            <div class="trend-icon">👓</div>
+            <h3>Multi-modal Development</h3>
+            <p>Visual + voice + text interfaces</p>
+          </div>
+          <div class="trend">
+            <div class="trend-icon">🧩</div>
+            <h3>AI Specialization</h3>
+            <p>Domain-specific coding assistants</p>
+          </div>
+          <div class="trend">
+            <div class="trend-icon">🔄</div>
+            <h3>Self-improving Systems</h3>
+            <p>Developer agents that learn from feedback</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Questions Slide -->
+      <section class="final-slide">
+        <div class="thank-you-container">
+          <h2>Questions?</h2>
+          <p class="thank-you">Thank you for attending!</p>
+          <div class="final-decoration">
+            <div class="emoji-circle">🙏</div>
+            <div class="emoji-circle">💻</div>
+            <div class="emoji-circle">🤖</div>
+          </div>
+          <p class="credits">Piotr Kukielka, Principal Engineer @ Sourcegraph</p>
+          <p class="date">Created with <span class="highlight">Claude</span> by Anthropic</p>
+        </div>
+      </section>
+      
+    </div>
+  </div>
+
+  <script src="node_modules/reveal.js/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      transition: 'fade',
+      transitionSpeed: 'fast',
+      backgroundTransition: 'zoom',
+      center: false,
+      disableLayout: false,
+      overview: true,
+      progress: true,
+      controls: true,
+      controlsTutorial: true,
+      history: true,
+      keyboard: true,
+      touch: true,
+      autoAnimateDuration: 0.5,
+      autoAnimateEasing: 'ease-out',
+      width: '100%',
+      height: '100%',
+      margin: 0.1,
+      minScale: 0.8,
+      maxScale: 1.0,
+      scale: 0.8,
+      plugins: []
+    });
+  </script>
+  <script src="node_modules/highlight.js/lib/common.js"></script>
+  <script>
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
+    });
+  </script>
+</body>
+</html>
